@@ -1,6 +1,6 @@
 package org.larry.cms.core.page;
 
-import com.github.pagehelper.PageInfo;
+import java.util.List;
 
 /**
  * Created by Larry on 2017/2/27.
@@ -13,18 +13,21 @@ public class Page<T> {
     //总记录数
     private int total ;
     // 每页记录数
-    private int pageSize ;
-    // 总行数
-    private int rows ;
+    private int pageSize = 10;
+
+    // 当前页数
+    private int rows = 1;
     // 数据
     private T data ;
 
+    private List<T> list ;
+
     public int getOffset() {
-        return offset;
+        return this.getPageSize() * (this.getRows() - 1) ;
     }
 
     public void setOffset(int offset) {
-        this.offset = offset;
+        this.offset = offset ;
     }
 
     public int getTotal() {
@@ -57,5 +60,19 @@ public class Page<T> {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    public static void main(String[] args) {
+        Page page = new Page() ;
+        page.setRows(2);
+        System.out.println(page.getOffset());
+    }
+
+    public List<T> getList() {
+        return list;
+    }
+
+    public void setList(List<T> list) {
+        this.list = list;
     }
 }

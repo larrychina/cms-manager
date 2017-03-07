@@ -13,13 +13,6 @@
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
@@ -49,8 +42,8 @@
             <artifactId>cms-user</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.larry.cms.core</groupId>
-            <artifactId>cms-core</artifactId>
+            <groupId>org.larry.cms.content</groupId>
+            <artifactId>cms-content</artifactId>
         </dependency>
     </dependencies>
     <build>
